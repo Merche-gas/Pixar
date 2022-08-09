@@ -1,0 +1,454 @@
+:root{
+    --opensans: 'Open Sans', sans-serif;
+    --roboto: 'Roboto', sans-serif;
+    --sizeXS: 5px;
+    --sizeS: 10px;
+    --sizeM: 25px;
+    --sizeL: 50px;
+    --sizeXL: 100px;
+    --gristexto: color:rgba(19, 18, 18, 0.7);
+}
+*{
+    margin: 0;
+    padding: 0;
+    /*Esto sirve para que los bordes entren dentro de la medida que le pones a los cuadrados y otras cosas*/
+    box-sizing: border-box;
+    font-family: var(--opensans);
+    letter-spacing: 2px;
+}
+html{
+    font-size: 62.5%;
+}
+ul{
+    list-style: none;
+}
+header{
+    padding: 33px 118px;
+}
+a{
+    text-decoration: none;
+
+}
+p{
+    text-align: center;
+}
+h2{
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+h3{
+    font-size: 1.8rem;
+    color:gray;
+    margin-bottom: var(--sizeS);
+}
+hr{
+    width: 15%;
+    display: inline-block;
+    height: 1px;
+    color: #ddd;
+    opacity: 0.4;
+    margin: var(--sizeL);
+}
+/*Componentes*/
+.wrapper {
+    max-width: 1350px;
+    margin: auto;
+}
+/*Flex*/
+.flex {
+    display: flex;
+}
+.jbetween {
+    justify-content: space-between;
+}
+.acenter {
+    align-items: center;
+}
+.jcenter {
+    justify-content: center;
+}
+.fdcolumn {
+    flex-direction: column;
+}
+.fwrap {
+    flex-wrap: wrap;
+}
+/* --- --- */
+/* Header*/
+.menu{
+    font-size: 1.6rem;
+    font-weight: 500;
+    list-style: none;
+    position: relative;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.menu li:not(:last-child){
+    margin-right: var(--sizeM);
+}
+.menu > li{
+    padding: var(--sizeS) 0;
+}
+.short ul.submenu{
+    display: none;
+    position: absolute;
+    background-color: black;
+    color:white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    top: 40px;
+    padding: var(--sizeS) 30px;
+    line-height: 3rem;
+    z-index: 6666;
+}
+i.fa-bars{
+    font-size: 2.5rem;
+    color:rgba(19, 18, 18, 0.7);
+    display: none;
+    position: relative;
+    cursor: pointer;
+}
+i.fa-xmark{
+    font-size: 2.5rem;
+    color:rgba(19, 18, 18, 0.7);
+    position:absolute;
+    z-index: 5;
+    top: 0;
+    right: 0px;
+    background-color: white;
+    padding: 3px 3px;
+    display: none;
+    cursor: pointer;
+}
+i.off{
+    display: none;
+}
+i.on{
+    display: block;
+}
+.submenu a{
+    color:white;
+}
+a.cartoons:active{
+    color: white;
+}
+a.cartoons:visited{
+    color: white;
+}
+a.cartoons:hover{
+    color: grey;
+}
+.menu li:hover{
+    color:gray;
+}
+li.short:hover ul.submenu{
+    display: block;
+    top: 40px;
+}
+@media (max-width: 1200px) {
+    .menu {
+        display: none;
+    }
+    a.logo{
+        width: 15%;
+        position: relative;
+    }
+    header{
+        padding: 18px 28px;
+    }
+    i.fa-bars{
+        display: block;
+    }
+}
+
+/*--- ---*/
+/* Menu lateral*/
+.lateral {
+    position: absolute;
+    top:0;
+    left: -2500px;
+    background-color: white;
+    width: 90%;
+    height: 100vh;
+    z-index: 3;
+    padding: 36px 0 0 36px;
+    transition: 1s;
+
+}
+.lateral.activo{
+    left:0;
+}
+.lateral > span{
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.lateral > span:not(:first-child){
+    margin-top: 18px;
+}
+.fa-solid.fa-angles-right{
+    color: gray;
+    font-size: 1.2rem;
+}
+/* nombre animación .animate__slideInLeft */
+/* --- --- */
+/*Panda rojo*/
+.pequena{
+    width: 40%;
+    display: block;
+    position: relative;
+    top: 20%;
+    left: 50%;
+    
+}
+.parallax{
+    height: 900px;
+    background-image:url('img/r315_34a_pub.pub16.356.jpg');
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+
+}
+@media (max-width: 1200px){
+    .parallax {
+        height: 500px;
+    }
+    
+}
+@media (max-width: 650px){
+    .pequena{
+        width: 90%;
+        position: relative;
+        top: 2%;
+        left: 5%;
+    }
+}
+@media (max-width: 450px){
+    .parallax {
+        height: 350px;
+    }
+}
+/*--- ---*/
+/*Cars cartoons*/
+.parallaxcars{
+    height: 700px;
+    background-image:url('img/ctoons_head.jpg');
+    background-size:cover;
+    background-attachment:fixed;
+    background-position: center;
+}
+.parallaxcars p{
+    color:white;
+    font-size: 5.1rem;
+    font-weight: 700;
+    letter-spacing: var(--sizeM);
+}
+@media (max-width: 1200px){
+    .parallaxcars{
+        height: 500px;
+        background-position-y: -50px;
+    }
+    .parallaxcars p{
+        letter-spacing: var(--sizeS);
+    }
+}
+@media (max-width: 650px){
+    .parallaxcars{
+        height: 350px;
+        background-position-y: -50px;
+    }
+    .parallaxcars p{
+        font-size: 3rem;
+        letter-spacing: var(--sizeS);
+    }
+}
+@media (max-width: 450px){
+    .parallaxcars p{
+        font-size: 3rem;
+        letter-spacing: 2px;
+    }
+}
+
+/*--- ---*/
+/*3fotos*/
+
+.tresfotos{
+    padding: 150px 142px;
+}
+
+.foto a{
+    padding: 17px;
+    color: black;
+    flex:1;
+    flex-basis: 30%;
+}
+a img{
+    width: 100%;
+}
+p.pie{
+    padding: 17px;
+    font: 1.4rem;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.pie{
+    width: 100%;
+}
+.foto a:active{
+    color:black;
+}
+.foto a:visited{
+    color: black;
+}
+@media (max-width: 1200px){
+    .tresfotos{
+        padding: 8% 4%;
+    }
+}
+@media (max-width: 650px){
+    .foto{
+       flex-direction: column;        
+    }
+}
+/*--- ---*/
+/*Doce fotos*/
+.docefotos{
+    padding: 150px 90px 0px 90px;
+}
+.foto12 div{
+    padding: var(--sizeM);
+    flex:1;
+    flex-basis: 23%;
+    padding: 0 4.5%;
+}
+div.grid img{
+    width: 100%;
+}
+a p.pie2{
+    padding: 12px 17px 25px 17px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: var(--sizeS);
+    letter-spacing: 1px;
+    color:black;
+}
+@media (max-width: 1200px){
+    .docefotos{
+        padding: 10% 5% 0% 5%;
+    }
+}
+@media (max-width: 650px){
+    .foto12 div{
+        padding: var(--sizeM);
+        flex:1;
+        flex-basis: 48%;
+        padding: 0 4.5%;
+    }
+    div.grid img{
+        padding: 0 10%;
+    }
+}
+/*--- ---*/
+/*Columnas*/
+.col{
+    padding: 17px;
+}
+.galeriacars .col{
+    flex: 1;
+}
+.galeriacars .col img{
+    width: 100%;
+}
+.col p{
+    text-align: left;
+    font-size: 1.6rem;
+    color: rgba(19, 18, 18, 0.7);
+    line-height: 3rem;
+}
+.fila{
+    margin: 0 50px;
+}
+.hr{
+    width: 100%;
+    text-align: center;
+}
+h3:not(:first-child){
+    margin-top: var(--sizeM);
+}
+@media (max-width: 1150px){
+    .col p{
+        font-size: 1.4rem;
+    }
+    h2{
+       font-size: 2.3rem;
+       margin-bottom: 10px;
+    }
+    hr{
+        width: 65%;
+        margin: var(--sizeM);
+    }
+    div.fila{
+        margin: var(--sizeS) var(--sizeS);
+    }
+
+}
+@media (max-width: 650px){
+    div.fila{
+        flex-direction: column;
+    }
+    hr{
+        width: 80%;
+        margin: var(--sizeS);
+    }
+    .col img{
+        margin-top:var(--sizeS);
+    }
+    
+}
+/*--- ---*/
+/*Footer*/
+.redsocial{
+    font-size: var(--sizeM);
+    text-align: center;
+    letter-spacing: var(--sizeS);
+    padding: 20px 0;
+}
+.politica a{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: rgba(19, 18, 18, 0.7);
+    padding-bottom: 0.05em;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(29,29,29,.3);
+    line-height: 2.5rem;
+}
+.politica a:active{
+    color:black;
+}
+.politica a:visited{
+    color: black;
+}
+.copi{
+    font-size: 1.4rem;
+    margin-top: 29px;
+    margin-bottom: var(--sizeXL);
+    color: rgba(19, 18, 18,.7);
+}
+@media (max-width: 750px){
+    .politica a, .copi{
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 560px){
+    .politica a, .copi{
+            font-size: 1rem;
+    }
+}
+
+
+/*--- ---
